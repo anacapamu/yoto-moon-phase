@@ -1,5 +1,7 @@
+import { PHASES } from './constants.js';
+
 // Simple ≈Conway: returns 0 to 7
-export function computePhaseIndex(date) {
+function computePhaseIndex(date) {
   const y = date.getUTCFullYear();
   const m = date.getUTCMonth() + 1;
   const d = date.getUTCDate();
@@ -19,6 +21,11 @@ export function computePhaseIndex(date) {
   if (phase < 23) return 5; // Waning Gibbous
   if (phase < 25) return 6; // Last Quarter
   return 7; // Waning Crescent
+}
+
+export function getPhase() {
+  const phaseIndex = computePhaseIndex(new Date());
+  return PHASES[phaseIndex];
 }
 
 export function b64ToBytes(b64) {
