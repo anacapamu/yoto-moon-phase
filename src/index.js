@@ -1,4 +1,4 @@
-import { b64ToBytes, getPhase } from './helpers.js';
+import { getPhase } from './helpers.js';
 
 export default {
   async fetch(req) {
@@ -23,7 +23,7 @@ export default {
           {
             utc: new Date().toISOString(),
             phaseName: phase.label,
-            icon: phase.icon.b64,
+            icon: phase.icon.url,
             audio: phase.audio.url,
           },
           null,
@@ -35,11 +35,15 @@ export default {
 
     if (pathname === '/moon/icon.png') {
       const phase = getPhase();
-      const b64 = phase.icon.b64;
+      const iconUrl = phase.icon.url;
 
-      if (!b64) return new Response('No icon.', { status: 404 });
+      if (!iconUrl) return new Response('No icon.', { status: 404 });
 
-      const bytes = b64ToBytes(b64);
+      const upstream = await fetch(iconUrl, { cf: { cacheTtl: 3600 } });
+      if (!upstream.ok) return new Response('icon upstream error', { status: 502 });
+
+      const bytes = await upstream.arrayBuffer();
+
       return new Response(bytes, {
         headers: {
           'Content-Type': 'image/png',
