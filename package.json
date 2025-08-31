@@ -7,7 +7,9 @@
     "start": "wrangler dev",
     "deploy": "wrangler deploy",
     "format": "prettier . --write",
-    "check": "prettier . --check"
+    "check": "prettier . --check",
+    "yoto:login": "node scripts/yoto-login.mjs",
+    "yoto:create": "node scripts/create-streaming-card.mjs"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
