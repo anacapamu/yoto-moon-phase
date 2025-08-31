@@ -7,7 +7,7 @@ export const PHASES = [
       url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/icons/new_moon_symbol.png',
     },
     audio: {
-      url: 'https://raw.githubusercontent.com/anars/blank-audio/master/1-second-of-silence.mp3',
+      url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/audio/new-moon.mp3',
     },
   },
   {
@@ -17,7 +17,7 @@ export const PHASES = [
       url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/icons/waxing_crescent_moon_symbol.png',
     },
     audio: {
-      url: 'https://raw.githubusercontent.com/anars/blank-audio/master/1-second-of-silence.mp3',
+      url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/audio/waxing-crescent.mp3',
     },
   },
   {
@@ -27,7 +27,7 @@ export const PHASES = [
       url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/icons/first_quarter_moon_symbol.png',
     },
     audio: {
-      url: 'https://raw.githubusercontent.com/anars/blank-audio/master/1-second-of-silence.mp3',
+      url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/audio/first-quarter.mp3',
     },
   },
   {
@@ -37,7 +37,7 @@ export const PHASES = [
       url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/icons/waxing_gibbous_moon_symbol.png',
     },
     audio: {
-      url: 'https://raw.githubusercontent.com/anars/blank-audio/master/1-second-of-silence.mp3',
+      url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/audio/waxing-gibbous.mp3',
     },
   },
   {
@@ -47,7 +47,7 @@ export const PHASES = [
       url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/icons/full_moon_symbol.png',
     },
     audio: {
-      url: 'https://raw.githubusercontent.com/anars/blank-audio/master/1-second-of-silence.mp3',
+      url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/audio/full-moon.mp3',
     },
   },
   {
@@ -57,7 +57,7 @@ export const PHASES = [
       url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/icons/waning_gibbous_moon_symbol.png',
     },
     audio: {
-      url: 'https://raw.githubusercontent.com/anars/blank-audio/master/1-second-of-silence.mp3',
+      url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/audio/waning-gibbous.mp3',
     },
   },
   {
@@ -67,7 +67,7 @@ export const PHASES = [
       url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/icons/last_quarter_moon_symbol.png',
     },
     audio: {
-      url: 'https://raw.githubusercontent.com/anars/blank-audio/master/1-second-of-silence.mp3',
+      url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/audio/last-quarter.mp3',
     },
   },
   {
@@ -77,7 +77,7 @@ export const PHASES = [
       url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/icons/waning_crescent_moon_symbol.png',
     },
     audio: {
-      url: 'https://raw.githubusercontent.com/anars/blank-audio/master/1-second-of-silence.mp3',
+      url: 'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/audio/waning-crescent.mp3',
     },
   },
 ];
