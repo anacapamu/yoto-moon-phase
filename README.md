@@ -16,14 +16,21 @@
 
 ### Deploy to Yoto
 
-1.
+1. Get login
 
 ```
 export YOTO_CLIENT_ID="<client-id>"
 npm run yoto:login
 ```
 
-2.
+2. Upload MYO Cover
+
+```
+export COVER_IMAGE_URL="" // or export COVER_IMAGE_PATH=""
+node scripts/upload-myo-cover.mjs
+```
+
+3. Create a streaming track (for the first time)
 
 ```
 export WORKER_BASE="https://<worker-domain>.workers.dev"

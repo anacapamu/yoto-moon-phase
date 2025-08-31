@@ -1,5 +1,6 @@
 const accessToken = process.env.YOTO_ACCESS_TOKEN?.trim();
 const workerBase = process.env.WORKER_BASE?.replace(/\/+$/, ''); // strip trailing slash
+const mediaUrl = process.env.MEDIA_URL?.trim();
 
 if (!accessToken) {
   console.error('Missing YOTO_ACCESS_TOKEN (must be the ACCESS token)');
@@ -41,7 +42,10 @@ const body = {
       },
     ],
   },
-  metadata: { description: 'Dynamic moon phase: stream + dynamic icon' }, // TODO: update as this shows up with the card
+  metadata: {
+    description: 'Dynamic moon phase: stream + dynamic icon',
+    cover: { imageL: mediaUrl },
+  }, // TODO: update as this shows up with the card
 };
 
 const resp = await fetch('https://api.yotoplay.com/content', {
