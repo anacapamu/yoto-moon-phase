@@ -11,16 +11,15 @@ function computePhaseIndex(date) {
   if (r > 9) r -= 19;
   r = ((r * 11) % 30) + m + d;
   if (m < 3) r += 2;
-  const phase = (r + (y < 2000 ? -4 : -8.3)) % 30;
 
-  if (phase < 1) return 0; // New
-  if (phase < 7) return 1; // Waxing Crescent
-  if (phase < 9) return 2; // First Quarter
-  if (phase < 15) return 3; // Waxing Gibbous
-  if (phase < 17) return 4; // Full
-  if (phase < 23) return 5; // Waning Gibbous
-  if (phase < 25) return 6; // Last Quarter
-  return 7; // Waning Crescent
+  // Slightly less negative than -8.3; normalize modulo to [0,30)
+  let age = (((r + (y < 2000 ? -4 : -7.0)) % 30) + 30) % 30;
+
+  // Classify by nearest of 8 phases (octants)
+  const synodic = 29.53058867;
+  const idx = Math.round((age / synodic) * 8) % 8;
+  // 0 New, 1 Wax Cres, 2 First Q, 3 Wax Gib, 4 Full, 5 Wan Gib, 6 Last Q, 7 Wan Cres
+  return idx;
 }
 
 export function getPhase() {
