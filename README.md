@@ -35,5 +35,6 @@ node scripts/upload-myo-cover.mjs
 ```
 export WORKER_BASE="https://<worker-domain>.workers.dev"
 export YOTO_ACCESS_TOKEN="<access-token-from-step-1>"
+export MEDIA_URL="<output-from-step-2>"
 npm run yoto:create
 ```

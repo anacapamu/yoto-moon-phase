@@ -21,13 +21,24 @@ if (!mine.ok) {
 }
 
 const title = 'Moon Phases';
+const description = `Learn About Moon Phases
+Explore how the moon changes shape in our sky and try a simple hands-on demo at home.
+
+Tracks
+1) Moon Tonight — Dynamic audio with a matching pixel icon for tonight's phase.
+2) What Lights the Moon? — A quick intro: the Moon doesn't actually glow; it reflects sunlight.
+3) Home Lab: Lamp + Ball — Recreate all 8 phases using a lamp (Sun), a ball (Moon), and you (Earth), with step-by-step instructions.
+
+Features
+- No AI voices`;
+
 const body = {
   title,
   content: {
     chapters: [
       {
         key: '01',
-        title: 'Moon Tonight',
+        title: 'Learn About Moon Phases',
         tracks: [
           {
             key: '01',
@@ -37,15 +48,39 @@ const body = {
             trackUrl: `${workerBase}/moon`,
             display: { iconUrl16x16: `${workerBase}/moon/icon.png` },
           },
+          {
+            key: '02',
+            type: 'file',
+            format: 'mp3',
+            title: 'Intro Moon Phases',
+            trackUrl:
+              'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/audio/intro-to-moon-phases.mp3',
+            display: {
+              iconUrl16x16:
+                'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/icons/crescent_moon.png',
+            },
+          },
+          {
+            key: '03',
+            type: 'file',
+            format: 'mp3',
+            title: 'Create Moon Phases at Home',
+            trackUrl:
+              'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/audio/moon-phase-lab.mp3',
+            display: {
+              iconUrl16x16:
+                'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/icons/full_moon_with_face.png',
+            },
+          },
         ],
         display: { iconUrl16x16: `${workerBase}/moon/icon.png` },
       },
     ],
   },
   metadata: {
-    description: 'Dynamic moon phase: stream + dynamic icon',
+    description: description,
     cover: { imageL: mediaUrl },
-  }, // TODO: update as this shows up with the card
+  },
 };
 
 const resp = await fetch('https://api.yotoplay.com/content', {
