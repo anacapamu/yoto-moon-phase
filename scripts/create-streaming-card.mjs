@@ -50,7 +50,7 @@ const body = {
           },
           {
             key: '02',
-            type: 'file',
+            type: 'audio',
             format: 'mp3',
             title: 'Intro Moon Phases',
             trackUrl:
@@ -62,7 +62,7 @@ const body = {
           },
           {
             key: '03',
-            type: 'file',
+            type: 'audio',
             format: 'mp3',
             title: 'Create Moon Phases at Home',
             trackUrl:
