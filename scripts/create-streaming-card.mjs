@@ -26,10 +26,10 @@ Explore how the moon changes shape in our sky and try a simple hands-on demo at 
 
 Tracks
 1) Moon Tonight — Dynamic audio with a matching pixel icon for tonight's phase.
-2) What Lights the Moon? — A quick intro: the Moon doesn't actually glow; it reflects sunlight.
-3) Home Lab: Lamp + Ball — Recreate all 8 phases using a lamp (Sun), a ball (Moon), and you (Earth), with step-by-step instructions.
+2) Intro to Moon Phases — A quick intro on why the Moon doesn't actually glow.
+3) Create Moon Phases at Home - Recreate all 8 moon phases at home using a lamp (Sun), a ball (Moon), and you (Earth), with step-by-step instructions.
 
-Features
+Features:
 - No AI voices`;
 
 const body = {
@@ -50,9 +50,9 @@ const body = {
           },
           {
             key: '02',
-            type: 'audio',
+            type: 'stream',
             format: 'mp3',
-            title: 'Intro Moon Phases',
+            title: 'Intro to Moon Phases',
             trackUrl:
               'https://raw.githubusercontent.com/anacapamu/yoto-moon-phase-assets/main/audio/intro-to-moon-phases.mp3',
             display: {
@@ -62,7 +62,7 @@ const body = {
           },
           {
             key: '03',
-            type: 'audio',
+            type: 'stream',
             format: 'mp3',
             title: 'Create Moon Phases at Home',
             trackUrl:
