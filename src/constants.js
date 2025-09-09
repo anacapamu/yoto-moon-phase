@@ -1,4 +1,3 @@
-// TODO: Replace with MP3s for each phase
 export const PHASES = [
   {
     key: 'new',

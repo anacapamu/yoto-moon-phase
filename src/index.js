@@ -16,15 +16,19 @@ export default {
     }
 
     if (pathname === '/debug') {
-      const phase = getPhase();
-
+      const info = getPhase(req);
       return new Response(
         JSON.stringify(
           {
             utc: new Date().toISOString(),
-            phaseName: phase.label,
-            icon: phase.icon.url,
-            audio: phase.audio.url,
+            timezone: info.tz,
+            localDate: info.localDate,
+            localTime: info.localTime,
+            ageDays: info.ageDays,
+            phaseIndex: info.idx,
+            phaseName: info.phase.label,
+            icon: info.phase.icon.url,
+            audio: info.phase.audio.url,
           },
           null,
           2
@@ -34,8 +38,8 @@ export default {
     }
 
     if (pathname === '/moon/icon.png') {
-      const phase = getPhase();
-      const iconUrl = phase.icon.url;
+      const info = getPhase(req);
+      const iconUrl = info.phase.icon.url;
 
       if (!iconUrl) return new Response('No icon.', { status: 404 });
 
@@ -53,10 +57,10 @@ export default {
     }
 
     if (pathname === '/moon') {
-      const phase = getPhase();
-      console.log(`Phase: ${phase.label}`);
+      const info = getPhase(req);
+      console.log(`Phase: ${info.phase.label}`);
 
-      const upstream = await fetch(phase.audio.url);
+      const upstream = await fetch(info.phase.audio.url);
       if (!upstream.ok) return new Response('Upstream error.', { status: 502 });
 
       const bytes = await upstream.arrayBuffer();
